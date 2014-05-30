@@ -1,0 +1,17 @@
+#!/bin/python
+
+#my solution to Project Euler - problem 2
+#Leigh Hall / 30-may-14
+
+a=1
+b=1
+sum=0
+
+while (a<4000000) and (b<4000000):
+	a=a+b
+	if a % 2 == 0:
+		sum=sum+a
+	b=b+a
+	if b % 2 == 0:
+		sum = sum+b
+print sum
