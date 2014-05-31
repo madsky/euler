@@ -1,0 +1,36 @@
+#!/bin/python
+
+#my solution to Project Euler - problem 4
+#Leigh Hall / 31-may-14
+
+
+def isPal(n):
+	s=str(n)
+	r=rev(s)
+	if s==r:
+		return 1
+	else:
+		return 0
+
+def rev(s):
+	r=""
+	for i in range(len(s)-1,-1,-1):
+		r=r+s[i]
+	return r
+
+def problem4():
+	maxpal=0
+	maxi=0
+	maxj=0
+	for i in range(999,100,-1):
+		for j in range(999,100,-1):
+			#print "testing",i,j,i*j,ispal(i*j)
+			if isPal(i*j) and (i*j)>maxpal:
+				maxpal=i*j
+				maxi = i
+				maxj = j
+	print maxpal, maxi, maxj #only maxpal is needed to solve the problem	
+
+
+problem4()
+
