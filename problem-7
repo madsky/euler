@@ -1,0 +1,32 @@
+#!/bin/python
+
+#Solution to Project Euler - problem 7
+#Leigh Hall / 31-may-14
+
+#Another brute force solution but the maths of predicting primes is well beyond my ability...and interest
+
+def isprime(n):
+	for i in range (2, n/2):
+		if n % i == 0:
+			return 0
+	return 1
+
+
+def problem7(max):
+	#iterate through all numbers (i), if it's prime, it's the cntTH prime, we're looking for the maxTH prime
+	i=2
+	cnt=0
+	while cnt<=max:
+		while True:
+			if isprime(i):
+				i=i+1
+				cnt=cnt+1
+				break
+			else:
+				i=i+1
+	return i-1
+
+print problem7(10001)
+
+
+	
