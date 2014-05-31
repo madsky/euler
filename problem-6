@@ -1,0 +1,15 @@
+#!/bin/python
+
+#Solution to Project Euler - problem 6
+#Leigh Hall / 31-may-14
+
+def problem6(n):
+	sumsquares=0
+	squaresums=0
+	for i in range(1, n+1):
+		sumsquares=sumsquares+i*i
+		squaresums=squaresums+i
+	squaresums=squaresums*squaresums
+	return squaresums-sumsquares
+
+print problem6(100)
