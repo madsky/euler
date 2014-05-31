@@ -1,0 +1,24 @@
+#!/bin/python
+
+#Solution to Project Euler - problem 5
+#Leigh Hall / 31-may-14
+
+#Whilst I'm pretty sure this would eventually brute force the solution, there is obviously a need for some clever maths to solve this one efficiently.
+
+
+def problem5(n):
+	num=n
+	while True:
+		for i in range(2, n+1):
+			#print "checking",num,"mod",i
+			if num % i != 0: #not evenly divisible, so not our number
+				#print "breaking out..."
+				break
+		if i==n:
+			#print "returning answer"
+			return num
+		#print "iterating..."
+		num=num+1
+
+print problem5(20)
+
