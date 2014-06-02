@@ -12,13 +12,26 @@ import math
 
 def isprime(n):
 	if n==1:
+		print "    exiting at n==1"
 		return 0
 	if n==2:
+		print "    exiting at n==2"
 		return 1
-	
-	for i in range (3,int(math.ceil(math.sqrt(n))) ,2):
+
+	max = int(math.ceil(math.sqrt(n)))+1
+
+	if n%2==0:
+		print "    exiting at n%2"
+		return 0
+
+	for i in range (3, max, 2):
+		print "    starting loop"
+		print "    ...",i,"(", max,")"
 		if n % i == 0:
+			print "    exiting following mod test"
 			return 0
+	
+	print "    exiting after exhaustion" #i.e., it's prime...
 	return 1
 
 def problem10(n):
@@ -26,9 +39,10 @@ def problem10(n):
 	for i in range (2,n ):
 		print i
 		if isprime(i):
-			print "     ", i
+			print "            *****IS PRIME***** ", i
 			sum=sum+i
 	return sum
 
 print problem10(2000000)
+#print problem10(10)
 	
