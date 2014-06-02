@@ -1,0 +1,35 @@
+#!/bin/python
+
+#Solution to Project Euler - problem 12
+#Leigh Hall / 2-jun-14
+
+#another brute forcing of a problem that needs more mathematical thought...
+
+def divi(n,max):
+	#returns True if the number of divisors for n > max, the number of divisors for n, and the list of them.
+	cnt=0
+	ret=""
+	for i in range(1,n/2+1):
+		if n%i==0:
+			ret=ret+str(i)+","
+			cnt=cnt+1
+	ret=ret+str(n)+","
+	cnt=cnt+1
+	
+	if cnt>max:
+		return True, cnt, ret
+	else:
+		return False, cnt, ret
+
+def problem12(n):
+	sum=0
+	i=0
+	while True:
+		i=i+1
+		sum=sum+i
+		tmp=divi(sum, n)
+		print i,":",sum, tmp[1]
+		if tmp[0]==True:
+			return sum, tmp[1], tmp[2]
+
+print problem12(500)
